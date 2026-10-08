@@ -1,0 +1,22 @@
+[project]
+name = "polymarket-research-agents"
+version = "0.0.1"
+description = "Multi-agent research and paper trading for prediction markets. Paper only."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+# Added in the phase that needs them:
+#   Phase 1: httpx, polymarket
+#   Phase 2: langgraph, langgraph-checkpoint-sqlite
+#   Phase 4: fastapi, uvicorn, websockets
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
